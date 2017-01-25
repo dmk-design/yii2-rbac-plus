@@ -21,7 +21,7 @@ return [
         'width' => '140px',
         'value' => function($model) {
             return $model->ruleName == null ? Yii::t('rbac', '(not use)') : $model->ruleName;
-        }
+        },
     ],
     [
         'class' => 'kartik\grid\ActionColumn',
@@ -30,6 +30,11 @@ return [
         'urlCreator' => function($action, $model, $key, $index) {
             return Url::to([$action, 'name' => $key]);
         },
+        'visibleButtons' => [
+            'delete' => function($model, $key, $index) {
+                return $model->name === 'admin' ? false : true;
+            }
+        ],
         'viewOptions' => ['role' => 'modal-remote', 'title' => Yii::t('rbac', 'View'), 'data-toggle' => 'tooltip'],
         'updateOptions' => ['role' => 'modal-remote', 'title' => Yii::t('rbac', 'Update'), 'data-toggle' => 'tooltip'],
         'deleteOptions' => ['role' => 'modal-remote', 'title' => Yii::t('rbac', 'Delete'),
