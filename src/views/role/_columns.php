@@ -32,7 +32,13 @@ return [
         },
         'visibleButtons' => [
             'delete' => function($model, $key, $index) {
-                return $model->name === 'admin' ? false : true;
+                if($model->name === 'admin' || $model->name === 'user')
+                {
+                    return  false
+                }
+                else{
+                    return true;
+                }
             }
         ],
         'viewOptions' => ['role' => 'modal-remote', 'title' => Yii::t('rbac', 'View'), 'data-toggle' => 'tooltip'],
