@@ -34,7 +34,7 @@ return [
             'delete' => function($model, $key, $index) {
                 if($model->name === 'admin' || $model->name === 'user')
                 {
-                    return  false
+                    return  false;
                 }
                 else{
                     return true;
