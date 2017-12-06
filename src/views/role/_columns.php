@@ -32,6 +32,7 @@ return [
         },
         'visibleButtons' => [
             'delete' => function($model, $key, $index) {
+                //hide user and admin delete options
                 if($model->name === 'admin' || $model->name === 'user')
                 {
                     return  false;
