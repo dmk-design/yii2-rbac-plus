@@ -17,14 +17,14 @@
     "minimum-stability": "dev",
     "require": {
         "yiisoft/yii2": ">=2.0.4",
-        "dmk-design/yii2-ajaxcrud": "3.0.0"
+        "dmk-design/yii2-ajaxcrud": ">=2.1.5"
     },
     "autoload": {
         "psr-4": {
-            "dmk-design\\rbacplus\\": "src/"
+            "johnitvn\\rbacplus\\": "src/"
         }
     },
     "extra": {
-        "bootstrap": "dmk-design\\rbacplus\\Bootstrap"
+        "bootstrap": "johnitvn\\rbacplus\\Bootstrap"
     }
 }
